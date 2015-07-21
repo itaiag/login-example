@@ -7,7 +7,7 @@ Created on Jul 9, 2015
 from Infra.Pages import LoginPage
 from Tests.WebFixture import driver
 
-def testRegisterUser(driver):
+def test_register_user(driver):
     login = LoginPage(driver)
     register = login.click_on_register_lnk_and_go_to_register_page()
     register.type_to_first_name_tb("Itai")
