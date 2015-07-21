@@ -17,5 +17,5 @@ class BasePageObject(object):
         '''
         
         self.driver = driver
-        self.actionBot = ActionBot(driver)
+        self.bot = ActionBot(driver)
         

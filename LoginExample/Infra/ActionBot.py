@@ -4,7 +4,8 @@ Created on Jul 9, 2015
 @author: Itai
 '''
 from selenium.webdriver.common.by import By
-
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 class ActionBot(object):
     '''
     classdocs
@@ -27,6 +28,11 @@ class ActionBot(object):
         element = self.driver.find_element(locator.by, locator.value)
         element.clear()
         element.send_keys(keys)
+    
+    def wait_for_element_by(self,locator,description):
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.presence_of_element_located((locator.by, locator.value)))
+    
         
         
 class Locator(object):
@@ -50,4 +56,8 @@ class Locator(object):
                             
     @classmethod
     def css_selector(Locator,value):
-        return Locator(By.ID, value)
+        return Locator(By.CSS_SELECTOR, value)
+
+    @classmethod
+    def xpath(Locator,value):
+        return Locator(By.XPATH, value)
