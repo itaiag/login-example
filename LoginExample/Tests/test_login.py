@@ -6,7 +6,11 @@ Created on Jul 9, 2015
 
 from Infra.Pages import LoginPage
 from Tests.WebFixture import driver
+import pytest
 
+@pytest.mark.webtest
+@pytest.mark.regression
+@pytest.mark.itai
 def test_register_user(driver):
     login = LoginPage(driver)
     register = login.click_on_register_lnk_and_go_to_register_page()
@@ -18,4 +22,3 @@ def test_register_user(driver):
     login.type_to_username_tb("Itai")
     login.type_to_password_tb("12345")
     login.click_on_login_btb_and_go_to_dashboard_page()
-  
