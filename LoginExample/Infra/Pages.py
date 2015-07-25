@@ -32,8 +32,14 @@ class LoginPage(BasePageObject):
     def type_to_password_tb(self, password):
         self.bot.send_keys_to_element_by(self._PASSWORD_TB_BY, password, "About to type to password tb")
         
-    def click_on_login_btb_and_go_to_dashboard_page(self):
+    def click_on_login_btn_and_go_to_dashboard_page(self):
         self.bot.click_on_element_by(self._LOGIN_BTN_BY, "About to click on login button")
+        return DashboardPage(self.driver)
+    
+    def click_on_login_btn_and_stay_in_login_page(self):
+        self.bot.click_on_element_by(self._LOGIN_BTN_BY, "About to click on login button")
+        # We want to make sure that we are still in the login page.
+        return LoginPage(self.driver)
 
     def click_on_register_lnk_and_go_to_register_page(self):
         self.bot.click_on_element_by(self._REGISTER_LNK_BY, "About to click on register link")
@@ -67,5 +73,20 @@ class RegisterPage(BasePageObject):
     
     def click_on_register_btn_and_go_to_login_page(self):
         self.bot.click_on_element_by(self._REGISTER_BTN_BY, "About to click on register button")
+        return LoginPage(self.driver)
+        
+class DashboardPage(BasePageObject):
+    
+    _LOGOUT_LNK = Locator.css_selector(".btn-primary")
+    
+    def __init__(self, driver):
+        super(DashboardPage, self).__init__(driver)
+        self.bot.wait_for_element_by(Locator.xpath("//h1[contains(.,'Hi')]"), "Waiting for the title")
+        
+    def click_on_delete_user_lnk(self, user_name):
+        self.bot.click_on_element_by(Locator.xpath("//li[contains(.,'{0}')]/a".format(user_name)), "About to delete user {0}".format(user_name))
+    
+    def click_on_logout_btn_and_go_to_login_page(self):
+        self.bot.click_on_element_by(self._LOGOUT_LNK, "About to click on login link")
         return LoginPage(self.driver)
         
