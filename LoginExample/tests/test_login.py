@@ -4,9 +4,9 @@ Created on Jul 9, 2015
 @author: Itai
 '''
 
-from Infra.Pages import LoginPage
-from Tests.WebFixture import driver  # @UnusedImport
-import Tests.marks as m
+from infra.pages import LoginPage
+from tests.fixtures import driver  # @UnusedImport
+import tests.marks as m
 
 # Marks the whole tests in the module as 'web' tests
 pytestmark = [m.web, m.itai, m.login]

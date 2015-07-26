@@ -3,7 +3,7 @@ Created on Jul 9, 2015
 
 @author: Itai
 '''
-from Infra.ActionBot import ActionBot
+from infra import actionbot
 
 class BasePageObject(object):
     '''
@@ -17,5 +17,5 @@ class BasePageObject(object):
         '''
         
         self.driver = driver
-        self.bot = ActionBot(driver)
+        self.bot = actionbot(driver)
         

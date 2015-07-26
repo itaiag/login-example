@@ -3,7 +3,7 @@
 @author: agmon
 '''
 import pytest
-from Infra.WebdriverFactory import get_driver
+from infra.webdriver_factory import get_driver
 
 url = "http://localhost:8080"
 

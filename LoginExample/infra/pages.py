@@ -5,9 +5,9 @@ Created on Jul 9, 2015
 '''
 
 
-from Infra.ActionBot import Locator
+from infra.actionbot import Locator
 
-from Infra.BasePageObject import BasePageObject
+from infra.base_page import BasePageObject
 
 class LoginPage(BasePageObject):
     '''
