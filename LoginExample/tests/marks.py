@@ -1,3 +1,4 @@
+#@PydevCodeAnalysisIgnore
 '''
 Created on Jul 25, 2015
 
@@ -17,3 +18,6 @@ fast = pytest.mark.fast
 
 #Features
 login = pytest.mark.login
+
+#Allure
+step = pytest.allure.step
