@@ -38,5 +38,5 @@ and extract it.
 
 The HTML reports will be generated in the allure folder.
 
-**Notice:** The reports can not be viewed in the Chrom browser. Try Firefox
+**Notice:** The reports can not be viewed in the Chrome browser. Try Firefox
 
