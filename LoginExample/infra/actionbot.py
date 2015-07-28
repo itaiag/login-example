@@ -6,7 +6,6 @@ Created on Jul 9, 2015
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from infra.reporter import report
 class ActionBot(object):
     '''
     classdocs
@@ -19,19 +18,16 @@ class ActionBot(object):
         '''
         self.driver = driver
     
-    def click_on_element_by(self, locator, description):
-        report(description)
+    def click_on_element_by(self, locator):
         element = self.driver.find_element(locator.by, locator.value)
         element.click()
     
-    def send_keys_to_element_by(self, locator, keys, description):
-        report(description)
+    def send_keys_to_element_by(self, locator, keys):
         element = self.driver.find_element(locator.by, locator.value)
         element.clear()
         element.send_keys(keys)
     
-    def wait_for_element_by(self,locator,description):
-        report(description)
+    def wait_for_element_by(self,locator):
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.presence_of_element_located((locator.by, locator.value)))
     

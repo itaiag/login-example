@@ -9,6 +9,8 @@ from infra.actionbot import Locator
 
 from infra.base_page import BasePageObject
 
+import pytest
+
 class LoginPage(BasePageObject):
     '''
     classdocs
@@ -24,25 +26,30 @@ class LoginPage(BasePageObject):
         Construbdctor
         '''
         super(LoginPage, self).__init__(driver)
-        self.bot.wait_for_element_by(Locator.xpath("//h2[text()='Login']"), "Waiting for page to load")
+        self.bot.wait_for_element_by(Locator.xpath("//h2[text()='Login']"))
         
+    @pytest.allure.step
     def type_to_username_tb(self, username):
-        self.bot.send_keys_to_element_by(self._USERNAME_TB_BY, username, "About to type to element username")
+        self.bot.send_keys_to_element_by(self._USERNAME_TB_BY, username)
     
+    @pytest.allure.step
     def type_to_password_tb(self, password):
-        self.bot.send_keys_to_element_by(self._PASSWORD_TB_BY, password, "About to type to password tb")
+        self.bot.send_keys_to_element_by(self._PASSWORD_TB_BY, password)
         
+    @pytest.allure.step
     def click_on_login_btn_and_go_to_dashboard_page(self):
-        self.bot.click_on_element_by(self._LOGIN_BTN_BY, "About to click on login button")
+        self.bot.click_on_element_by(self._LOGIN_BTN_BY)
         return DashboardPage(self.driver)
     
+    @pytest.allure.step
     def click_on_login_btn_and_stay_in_login_page(self):
-        self.bot.click_on_element_by(self._LOGIN_BTN_BY, "About to click on login button")
+        self.bot.click_on_element_by(self._LOGIN_BTN_BY)
         # We want to make sure that we are still in the login page.
         return LoginPage(self.driver)
 
+    @pytest.allure.step
     def click_on_register_lnk_and_go_to_register_page(self):
-        self.bot.click_on_element_by(self._REGISTER_LNK_BY, "About to click on register link")
+        self.bot.click_on_element_by(self._REGISTER_LNK_BY)
         return RegisterPage(self.driver)
     
 
@@ -57,22 +64,27 @@ class RegisterPage(BasePageObject):
     
     def __init__(self, driver): 
         super(RegisterPage, self).__init__(driver)
-        self.bot.wait_for_element_by(Locator.xpath("//h2[text()='Register']"), "Waiting for page to load")
+        self.bot.wait_for_element_by(Locator.xpath("//h2[text()='Register']"))
         
+    @pytest.allure.step
     def type_to_first_name_tb(self, firstName):
-        self.bot.send_keys_to_element_by(self._FIRST_NAME_TB_BY, firstName, "About to send keys to first name tb")
-    
+        self.bot.send_keys_to_element_by(self._FIRST_NAME_TB_BY, firstName)
+ 
+    @pytest.allure.step
     def type_to_last_name_tb(self, lastName):
-        self.bot.send_keys_to_element_by(self._LAST_NAME_TB_BY, lastName, "About to type to last name tb")
+        self.bot.send_keys_to_element_by(self._LAST_NAME_TB_BY, lastName)
     
+    @pytest.allure.step
     def type_to_username_tb(self, username):
-        self.bot.send_keys_to_element_by(self._USERNAME_TB_BY, username, "About to type to username tb")
+        self.bot.send_keys_to_element_by(self._USERNAME_TB_BY, username)
         
+    @pytest.allure.step
     def type_to_password_tb(self, password):
-        self.bot.send_keys_to_element_by(self._PASSWORD_TB_BY, password, "About to type to password tb")
+        self.bot.send_keys_to_element_by(self._PASSWORD_TB_BY, password)
     
+    @pytest.allure.step
     def click_on_register_btn_and_go_to_login_page(self):
-        self.bot.click_on_element_by(self._REGISTER_BTN_BY, "About to click on register button")
+        self.bot.click_on_element_by(self._REGISTER_BTN_BY)
         return LoginPage(self.driver)
         
 class DashboardPage(BasePageObject):
@@ -81,12 +93,14 @@ class DashboardPage(BasePageObject):
     
     def __init__(self, driver):
         super(DashboardPage, self).__init__(driver)
-        self.bot.wait_for_element_by(Locator.xpath("//h1[contains(.,'Hi')]"), "Waiting for the title")
+        self.bot.wait_for_element_by(Locator.xpath("//h1[contains(.,'Hi')]"))
         
+    @pytest.allure.step
     def click_on_delete_user_lnk(self, user_name):
-        self.bot.click_on_element_by(Locator.xpath("//li[contains(.,'{0}')]/a".format(user_name)), "About to delete user {0}".format(user_name))
+        self.bot.click_on_element_by(Locator.xpath("//li[contains(.,'{0}')]/a".format(user_name)))
     
+    @pytest.allure.step
     def click_on_logout_btn_and_go_to_login_page(self):
-        self.bot.click_on_element_by(self._LOGOUT_LNK, "About to click on login link")
+        self.bot.click_on_element_by(self._LOGOUT_LNK)
         return LoginPage(self.driver)
         
