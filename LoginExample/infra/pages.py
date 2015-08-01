@@ -29,18 +29,25 @@ class LoginPage(BasePageObject):
         super(LoginPage, self).__init__(driver)
         self.bot.wait_for_element_by(Locator.xpath("//h2[text()='Login']"))
         
-    @m.step
+    @m.step("Type '{1}' to user tb")
     def type_to_username_tb(self, username):
         self.bot.send_keys_to_element_by(self._USERNAME_TB_BY, username)
     
-    @m.step
+    @m.step("Type '{1}' to password tb")
     def type_to_password_tb(self, password):
         self.bot.send_keys_to_element_by(self._PASSWORD_TB_BY, password)
         
-    @m.step
+    @m.step("Click on login btn and go to dashboard page")
     def click_on_login_btn_and_go_to_dashboard_page(self):
         self.bot.click_on_element_by(self._LOGIN_BTN_BY)
         return DashboardPage(self.driver)
+    
+    @m.step("Do failure")
+    def do_failure(self):
+        '''
+        The purpose of this method is to be an example for a failed action
+        '''
+        self.bot.click_on_element_by(Locator.id("NoExist"))
     
     @m.step
     def click_on_login_btn_and_stay_in_login_page(self):
@@ -73,19 +80,19 @@ class RegisterPage(BasePageObject):
         super(RegisterPage, self).__init__(driver)
         self.bot.wait_for_element_by(Locator.xpath("//h2[text()='Register']"))
         
-    @m.step
+    @m.step("Type '{1}' to first name tb")
     def type_to_first_name_tb(self, firstName):
         self.bot.send_keys_to_element_by(self._FIRST_NAME_TB_BY, firstName)
  
-    @m.step
+    @m.step("Type '{1}' to last name tb")
     def type_to_last_name_tb(self, lastName):
         self.bot.send_keys_to_element_by(self._LAST_NAME_TB_BY, lastName)
     
-    @m.step
+    @m.step("Type '{1}' to username tb")
     def type_to_username_tb(self, username):
         self.bot.send_keys_to_element_by(self._USERNAME_TB_BY, username)
         
-    @m.step
+    @m.step("Type '{1}' to password tb")
     def type_to_password_tb(self, password):
         self.bot.send_keys_to_element_by(self._PASSWORD_TB_BY, password)
     
@@ -111,7 +118,7 @@ class DashboardPage(BasePageObject):
         super(DashboardPage, self).__init__(driver)
         self.bot.wait_for_element_by(Locator.xpath("//h1[contains(.,'Hi')]"))
         
-    @m.step
+    @m.step("Click on delete user '{1}' lnk")
     def click_on_delete_user_lnk(self, user_name):
         self.bot.click_on_element_by(Locator.xpath("//li[contains(.,'{0}')]/a".format(user_name)))
     

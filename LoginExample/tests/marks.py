@@ -15,6 +15,7 @@ performance = pytest.mark.performance
 web = pytest.mark.web
 slow = pytest.mark.slow
 fast = pytest.mark.fast
+dev = pytest.mark.dev
 
 #Features
 login = pytest.mark.login
