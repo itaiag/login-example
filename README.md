@@ -24,7 +24,7 @@ Make sure you have Java JRE installed on your machine
 ## Running the tests
 ~~~~
 > cd LoginExample
-> py.test -s -v --alluredir=reports/allure --junitxml=reports/junit/junit.xml
+> py.test
 ~~~~
 
 ## Generating reports
