@@ -13,7 +13,6 @@ def driver(request):
     driver.get(url)
 
     def fin():
-        print ("finalizing")
         driver.quit()
     request.addfinalizer(fin)
     return driver
