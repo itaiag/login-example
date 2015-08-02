@@ -20,6 +20,7 @@ class LoginPage(BasePageObject):
     _PASSWORD_TB_BY = Locator.id("password")
     _REGISTER_LNK_BY = Locator.link_text("Register")
     _LOGIN_BTN_BY = Locator.css_selector("div.form-actions > button")
+    _ALERT_MSG_BY = Locator.css_selector(".alert[ng-if]")
         
     @m.step("In login page")
     def __init__(self, driver):
@@ -47,7 +48,12 @@ class LoginPage(BasePageObject):
         '''
         The purpose of this method is to be an example for a failed action
         '''
-        self.bot.click_on_element_by(Locator.id("NoExist"))
+        self.bot.click_on_element_by(Locator.id("NotExist"))
+    
+    @m.step("Get alert message text")
+    def get_alert_msg_text(self):
+        return self.bot.get_element_text_by(self._ALERT_MSG_BY)
+        
     
     @m.step
     def click_on_login_btn_and_stay_in_login_page(self):

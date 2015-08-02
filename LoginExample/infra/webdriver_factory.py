@@ -9,6 +9,7 @@ from infra.webdriver_reporter_listener import WebdriverReporterListener
 def get_driver(driver):
     if driver=="firefox":
         driver = webdriver.Firefox()
-        driver.maximize_window()
-        event_listener_driver = EventFiringWebDriver(driver,WebdriverReporterListener())
-        return event_listener_driver
+    driver.maximize_window()
+    driver.implicitly_wait(5)
+    return EventFiringWebDriver(driver,WebdriverReporterListener())
+    

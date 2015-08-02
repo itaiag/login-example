@@ -36,7 +36,10 @@ class ActionBot(object):
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.presence_of_element_located((locator.by, locator.value)))
 
-
+    @pytest.allure.step("Get the text of element with locator '{1}'")
+    def get_element_text_by(self,locator):
+        element = self.driver.find_element(locator.by, locator.value)
+        return element.text
 
 class Locator(object):
 

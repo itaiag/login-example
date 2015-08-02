@@ -2,6 +2,8 @@
 '''
 Created on Jul 9, 2015
 
+Suite that tests the various ways to regsiter a new user
+
 @author: Itai
 '''
 
@@ -10,7 +12,7 @@ from tests.fixtures import driver  # @UnusedImport
 import tests.marks as m
 
 # Marks the whole tests in the module as 'web' tests
-pytestmark = [m.web, m.itai, m.login]
+pytestmark = [m.web, m.itai, m.register, m.regressions]
 
 
 # Variables
