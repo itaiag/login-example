@@ -6,11 +6,10 @@ Example for using page object design pattern in the Python language
 
 ## Installation
 
-The project required various dependencies
+The project dependencies are specified in the requirements.txt file.
+
 ~~~~
-> pip install selenium
-> pip install pytest
-> pip install pytest-allure-adaptor
+> pip install -r requirements.txt
 ~~~~
 
 ## Launching the server
