@@ -58,3 +58,6 @@ target/
 
 # Reports
 reports/
+
+# Virtual Environment
+venv/
