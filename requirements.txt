@@ -1,0 +1,9 @@
+enum34==1.0.4
+lxml==3.4.4
+namedlist==1.7
+py==1.4.30
+pytest==2.7.2
+pytest-allure-adaptor==1.6.7
+selenium==2.47.1
+six==1.9.0
+wheel==0.24.0
