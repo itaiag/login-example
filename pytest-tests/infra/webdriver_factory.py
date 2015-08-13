@@ -1,5 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriver
+from selenium.webdriver.support.event_firing_webdriver\
+    import EventFiringWebDriver
 from infra.webdriver_reporter_listener import WebdriverReporterListener
 '''
 

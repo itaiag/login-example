@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"s",
+				"step	statement"
+			],
+			[
 				"de",
 				"dev	statement"
 			],
@@ -39,38 +43,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "tests/test_login.py",
-			"settings":
-			{
-				"buffer_size": 1475,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "tests/fixtures.py",
-			"settings":
-			{
-				"buffer_size": 296,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "infra/webdriver_factory.py",
-			"settings":
-			{
-				"buffer_size": 429,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "infra/pages.py",
-			"settings":
-			{
-				"buffer_size": 4570,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
@@ -95,10 +67,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 265.0,
-		"last_filter": "package ins",
+		"height": 377.0,
+		"last_filter": "git st",
 		"selected_items":
 		[
+			[
+				"git st",
+				"Git: Status"
+			],
 			[
 				"package ins",
 				"Package Control: Install Package"
@@ -128,7 +104,7 @@
 	},
 	"distraction_free":
 	{
-		"menu_visible": true,
+		"menu_visible": false,
 		"show_minimap": true,
 		"show_open_files": false,
 		"show_tabs": false,
@@ -138,22 +114,28 @@
 	"expanded_folders":
 	[
 		"/C/Users/Itai/git/login-example/pytest-tests",
-		"/C/Users/Itai/git/login-example/pytest-tests/tests",
-		"/C/Users/Itai/git/login-example/pytest-tests/tests/reports"
+		"/C/Users/Itai/git/login-example/pytest-tests/infra",
+		"/C/Users/Itai/git/login-example/pytest-tests/tests"
 	],
 	"file_history":
 	[
-		"/C/Users/Itai/git/login-example/pytest-tests/tests/test_delme.py",
-		"/C/Users/Itai/git/login-example/pytest-tests/tests/hello.py",
-		"/C/Users/Itai/git/login-example/pytest-tests/tests/test_login.py",
 		"/C/Users/Itai/git/login-example/pytest-tests/infra/pages.py",
-		"/C/Users/Itai/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Users/Itai/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
-		"/C/Users/Itai/git/login-example/pytest-tests/tests/fixtures.py",
-		"/C/Users/Itai/git/login-example/pytest-tests/tests/marks.py",
+		"/C/Users/Itai/git/login-example/pytest-tests/tests/test_login.py",
+		"/C/Users/Itai/git/login-example/pytest-tests/infra/base_page.py",
+		"/C/Users/Itai/git/login-example/pytest-tests/infra/webdriver_reporter_listener.py",
+		"/C/Users/Itai/git/login-example/pytest-tests/infra/webdriver_factory.py",
 		"/C/Users/Itai/git/login-example/pytest-tests/tests/test_register.py",
 		"/C/Users/Itai/git/login-example/pytest-tests/infra/actionbot.py",
+		"/C/Users/Itai/git/login-example/pytest-tests/infra/__init__.py",
+		"/C/Users/Itai/AppData/Roaming/Sublime Text 3/Packages/User/Run All Tests.sublime-build",
+		"/C/Users/Itai/git/login-example/pytest-tests/infra/reporter.py",
 		"/C/Users/Itai/git/login-example/pytest-tests/pytest-tests.sublime-project",
+		"/C/Users/Itai/git/login-example/pytest-tests/tests/fixtures.py",
+		"/C/Users/Itai/git/login-example/pytest-tests/tests/test_delme.py",
+		"/C/Users/Itai/git/login-example/pytest-tests/tests/hello.py",
+		"/C/Users/Itai/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Itai/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Itai/git/login-example/pytest-tests/tests/marks.py",
 		"/C/Users/Itai/git/login-example/pytest-tests/tests/reports/test_delme",
 		"/C/Users/Itai/AppData/Roaming/Sublime Text 3/Packages/User/Debug dev tests.sublime-build",
 		"/C/Users/Itai/AppData/Roaming/Sublime Text 3/Packages/User/Run Dev Tests.sublime-build",
@@ -166,7 +148,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 		]
@@ -176,6 +158,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"def test_register_user(driver):",
 			"login",
 			"Login",
 			"login",
@@ -206,155 +189,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "tests/test_login.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1475,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 0,
-					"file": "tests/test_login.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1475,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								349,
-								393
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "tests/fixtures.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 296,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								209,
-								209
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "infra/webdriver_factory.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 429,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								329,
-								329
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "infra/pages.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4570,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								226,
-								226
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -388,16 +224,16 @@
 			1.0
 		]
 	},
-	"menu_visible": true,
+	"menu_visible": false,
 	"output.exec":
 	{
-		"height": 154.0
+		"height": 183.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "Packages/User/Run Dev Tests.sublime-build",
+	"pinned_build_system": "Packages/User/Run dev tests.sublime-build",
 	"project": "pytest-tests.sublime-project",
 	"replace":
 	{
@@ -411,12 +247,20 @@
 		"selected_items":
 		[
 			[
-				"",
-				"tests\\test_delme.py"
+				"pa",
+				"infra\\pages.py"
 			],
 			[
 				"test_",
-				"tests\\test_login.py"
+				"tests\\test_register.py"
+			],
+			[
+				"actio",
+				"infra\\actionbot.py"
+			],
+			[
+				"",
+				"tests\\test_delme.py"
 			],
 			[
 				"test_login",
@@ -443,12 +287,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"C:\\Users\\Itai\\git\\login-example\\pytest-tests\\project.sublime-workspace"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
@@ -475,7 +323,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 223.0,
 	"status_bar_visible": true,
 	"template_settings":

@@ -26,4 +26,5 @@ class BasePageObject(object):
 
     def add_screenshot(self, description):
         pytest.allure.attach(
-            description, self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
+            description, self.driver.get_screenshot_as_png(),
+            type=AttachmentType.PNG)
