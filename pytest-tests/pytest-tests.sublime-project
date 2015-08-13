@@ -1,0 +1,31 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "./venv/Scripts/python.exe -u \"$file\""
+		}
+	],
+	"folders":
+	[
+	    {
+            "path": ".",
+            "follow_symlinks": true,
+            "folder_exclude_patterns": ["reports","venv","__pycache__"]
+        }
+	],
+	"settings":
+	{
+		"anaconda_linting": true,
+		"anaconda_linting_behaviour": "always",
+		"pep257": false,
+		"python_interpreter": "./venv/Scripts/python.exe",
+		"test_command": "py.test",
+		"test_before_command": "./venv/Scripts/activate",
+        "test_after_command": "./venv/Scripts/deactivate",
+		"use_pylint": false,
+		"validate_imports": false
+	}
+}
