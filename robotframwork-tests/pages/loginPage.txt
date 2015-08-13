@@ -1,0 +1,42 @@
+*** Settings ***
+Documentation     An example resource file
+Library           Selenium2Library
+
+*** Variables ***
+${LOGIN.LOGIN_BTN}    css=div.form-actions > button
+${LOGIN.REGISTER_LNK}    link=Register
+${LOGIN.PASSWORD_TB}    id=password
+${LOGIN.USERNAME_TB}    id=username
+${LOGIN.PAGE_HEADER}    xpath=//h2[text()='Login']
+${LOGIN.ALERT_MSG}    css=.alert[ng-if]
+
+*** Keywords ***
+Click on login btn
+    Click Element    ${LOGIN.LOGIN_BTN}
+
+Click on register lnk
+    Click Element    ${LOGIN.REGISTER_LNK}
+
+Type to password tb
+    [Arguments]    ${password}
+    Input Text    ${LOGIN.PASSWORD_TB}    ${password}
+
+Type to username tb
+    [Arguments]    ${username}
+    Input Text    ${LOGIN.USERNAME_TB}    ${username}
+
+Verify location
+    Wait Until Element Is Visible    ${LOGIN.PAGE_HEADER}
+
+Do login
+    [Arguments]    ${username}    ${password}
+    loginPage.Verify location
+    loginPage.Type to username tb    ${username}
+    loginPage.Type to password tb    ${password}
+    loginPage.Click on login btn
+
+Get alert message text
+    [Documentation]    Get the alert message text
+    Wait Until Element Is Visible    ${LOGIN.ALERT_MSG}
+    ${text}=    Get Text    ${LOGIN.ALERT_MSG}
+    [Return]    ${text}

@@ -1,0 +1,53 @@
+*** Settings ***
+Documentation     An example resource file
+Library           Selenium2Library
+
+*** Variables ***
+${REGISTER.REGISTER_LNK}    css=div.form-actions > button
+${REGISTER.FIRSTNAME_TB}    id=firstName
+${REGISTER.LASTNAME_TB}    name=lastName
+${REGISTER.PASSWORD_TB}    name=password
+${REGISTER.USERNAME_TB}    id=username
+${REGISTER.PAGE_HEADER}    xpath=//h2[text()='Register']
+
+*** Keywords ***
+Click on register lnk
+    [Documentation]    *Navigation*
+    ...
+    ...    Success: LoginPage
+    ...
+    ...    Failure: Stay in page
+    Click Element    ${REGISTER.REGISTER_LNK}
+
+Type to first name tb
+    [Arguments]    ${firstname}
+    Input Text    ${REGISTER.FIRSTNAME_TB}    ${firstname}
+
+Type to last name tb
+    [Arguments]    ${lastname}
+    Input Text    ${REGISTER.LASTNAME_TB}    ${lastname}
+
+Type to password tb
+    [Arguments]    ${password}
+    Input Text    ${REGISTER.PASSWORD_TB}    ${password}
+
+Type to user name tb
+    [Arguments]    ${username}
+    Input Text    ${REGISTER.USERNAME_TB}    ${username}
+
+Verify location
+    Wait Until Element Is Visible    ${REGISTER.PAGE_HEADER}
+
+Do register
+    [Arguments]    ${firstname}    ${lastname}    ${username}    ${password}
+    [Documentation]    *Navigation*
+    ...
+    ...    Success: LoginPage
+    ...
+    ...    Failure: Stay in page
+    registerPage.Verify location
+    registerPage.Type to first name tb    ${firstname}
+    registerPage.Type to last name tb    ${lastname}
+    registerPage.Type to user name tb    ${username}
+    registerPage.Type to password tb    ${password}
+    registerPage.Click on register lnk

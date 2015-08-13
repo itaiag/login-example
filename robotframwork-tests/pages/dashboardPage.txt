@@ -1,0 +1,14 @@
+*** Settings ***
+Documentation     An example resource file
+Library           Selenium2Library
+
+*** Keywords ***
+Verify location
+    Wait Until Element Is Visible    xpath=//h1[contains(.,'Hi')]
+
+Click on delete user lnk
+    [Arguments]    ${username}
+    Click Element    xpath=//li[contains(.,'${username}')]/a
+
+Click on logout btn
+    Click Element    css=.btn-primary

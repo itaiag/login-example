@@ -1,0 +1,8 @@
+*** Settings ***
+Documentation     An example resource file
+Library           Selenium2Library
+
+*** Keywords ***
+Init webdriver
+    Open Browser    http://localhost:8080    firefox
+    Maximize Browser Window
